@@ -122,6 +122,11 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  var randomIndex = Math.floor(math.random() * optionsarr.length);
+  password= password + optionsarr[randomIndex];
+
+  return password;
+
 
 
 
@@ -129,19 +134,27 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  var password = "";
+  for (var i = 0; i < passwordlength; i++); {
 
+  }
 
+  console.log(generatePassword)
 }
-console.log(generatePassword)
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var rightpassword= getPasswordOptions(); 
   var passwordText = document.querySelector('#password');
+  if(rightpassword){
 
+  var password = generatePassword();
   passwordText.value = password;
+  } else {passwordText.value= "";}
+
 }
 
 // Add event listener to generate button
