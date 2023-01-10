@@ -88,8 +88,34 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var passwordlength = 10;
+var optionsarr = [];
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+  optionsarr = [];
+
+  passwordlength = parseInt(prompt("Please input the length of your password!(between 10 and 64"));
+  if (isNaN(passwordlength) || passwordlength < 10 || passwordlength > 64) {
+    alert("Password length has to be a number, 10-64 digits. Please try again");
+    return false;
+
+  }
+
+  if (confirm("Do you want lowercase in your password")) {
+    optionsarr = optionsarr.concat(lowerCasedCharacters);
+  }
+  if (confirm("Do you want Uppercase in your password")) {
+    optionsarr = optionsarr.concat(upperCasedCharacters);
+  }
+  if (confirm("Do you want numbers in your passsword")) {
+    optionsarr = optionsarr.concat(numericCharacters);
+  }
+  if (confirm("Do you want symbols in your password")) {
+    optionsarr = optionsarr.concat(specialCharacters);
+  }
+  return true;
+
 
 
 }
@@ -97,13 +123,16 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+
+
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  
+
+
 }
- console.log(generatePassword)
+console.log(generatePassword)
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
